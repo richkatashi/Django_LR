@@ -1,0 +1,76 @@
+{%extends 'main/layout.html'%}
+{% load static %}
+{% block title %}{{anime.title}}{%endblock%}
+{% block head %}<link rel="stylesheet" href="{% static 'anime/css/details-view.css'%}">{%endblock%}
+
+
+      {% block content %}
+
+ <div class="container-wrapper">
+     <div class="cover">
+        <img src="{{ anime.poster_url }}" alt="{{ anime.title }}">
+     </div>
+     <div id="content">
+        <h1>{{ anime.title }}</h1>
+         <p class="description">
+            <h2>{{anime.description}}</h2>
+         </p>
+         <div class="videos">
+          {% for video in anime.video_set.all %}
+            <button class="video-show" onclick="showVideo(this, '{{ video.url }}')">{{ video.title }}</button>
+          {% endfor %}
+        <div id="video-container"></div>
+        </div>
+     </div>
+ </div>
+
+
+
+
+<div class="information">
+
+  <span> Статус:</span> <div class="info"> {{anime.anime_status}}</div>
+         <span> Тип:</span> <div class="info">{{anime.type}}</div>
+         <span> Год выхода:</span> <div class="info">{{anime.year}}</div>
+         <span> Жанр:</span> <div class="info">{{anime.anime_genres}}</div>
+         <span> Студия:</span> <div class="info">{{anime.anime_studios}}</div>
+         <span> Режиссёр:</span> <div class="info">{{anime.directors}}</div>
+         <span> Количество эпизодов:</span> <div class="info">{{anime.episodes_total}}</div>
+         <span> Озвучка:</span> <div class="info">{{anime.translations}}</div>
+</div>
+
+
+<script>
+    var currentIframe = null;
+    var currentVideoUrl = null;
+    var currentVideoButton = null;
+
+    function showVideo(button, url) {
+      var videoContainer = document.getElementById("video-container");
+      if (currentVideoButton === button) {
+        // закрываем плеер
+        videoContainer.innerHTML = "";
+        currentIframe = null;
+        currentVideoUrl = null;
+        currentVideoButton = null;
+      } else {
+        if (currentIframe) {
+          // заменяем URL видео в текущем плеере
+          currentIframe.src = url;
+        } else {
+          // создаем новый плеер
+          var iframe = document.createElement("iframe");
+          iframe.width = "1000px";
+          iframe.height = "512px";
+          iframe.src = url;
+          iframe.frameborder = "0";
+          iframe.allowfullscreen = true;
+          videoContainer.appendChild(iframe);
+          currentIframe = iframe;
+        }
+        currentVideoUrl = url;
+        currentVideoButton = button;
+      }
+    }
+  </script>
+{%endblock%}

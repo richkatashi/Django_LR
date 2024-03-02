@@ -1,0 +1,114 @@
+{%extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Каталог аниме{%endblock%}
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/catalog.css'%}">{%endblock%}
+
+      {% block content %}
+ <a href="#" class="title-link">
+  <h1>Популярное сейчас</h1>
+     <div class="view-all">Посмотреть ещё</div>
+</a>
+  <div class="poster"> <!-- container -->
+    <!-- Содержимое галереи -->
+        <!-- Слайды -->
+        <a href="{%url 'anime-detail' 1%}" class="image-container">
+          <img src="{% static 'main/img/jujutsu.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Магическая битва 2</div>
+        </a>
+        <a href="{%url 'anime-detail' 2%}" class="image-container">
+          <img src="{% static 'main/img/sousou.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Фрирен, провожающая в последний путь</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="{% static 'main/img/spy_family_2.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Семья шпиона 2</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="{% static 'main/img/jitsu_wa.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Я на самом деле самый сильный?</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="{% static 'main/img/watashi_no.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Я предпочитаю злодейку</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="{% static 'main/img/horimiya_piece.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Хоримия: Кусочек</div>
+        </a>
+  </div>
+
+<a href="#" class="title-link">
+  <h1>Популярное в сезоне</h1>
+     <div class="view-all">Посмотреть ещё</div>
+     </a>
+  <div class="poster"> <!-- container -->
+    <!-- Содержимое галереи -->
+        <!-- Слайды -->
+        <a href="{%url 'anime-detail' 1%}" class="image-container">
+          <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx111322-2jQMDQva4YD7.png" alt="" class="image-item">
+          <div class="caption-overlay">Восхождение героя щита 3</div>
+        </a>
+        <a href="{%url 'anime-detail' 2%}" class="image-container">
+          <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx162314-xdkc7xVmr83C.jpg" alt="" class="image-item">
+          <div class="caption-overlay">Атака титанов: Финал</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154459-foR6BMJayEbi.jpg" alt="" class="image-item">
+          <div class="caption-overlay">История знакомства опытной тебя и неопытного меня</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-7I8Cip7XRDhV.jpg" alt="" class="image-item">
+          <div class="caption-overlay">Монолог в аптечной лавке</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx162694-7dx7dawGFylP.png" alt="" class="image-item">
+          <div class="caption-overlay">100 подруг, которые действительно, действительно, действительно, действительно, действительно любят тебя</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142599-0IwWtxGRmZT8.jpg" alt="" class="image-item">
+          <div class="caption-overlay">Не ешь сырую свинину</div>
+        </a>
+  </div>
+
+<a href="#" class="title-link">
+  <h1>Популярное за всё время</h1>
+     <div class="view-all">Посмотреть ещё</div>
+    </a>
+  <div class="poster"> <!-- container -->
+    <!-- Содержимое галереи -->
+        <!-- Слайды -->
+        <a href="{%url 'anime-detail' slug='my-hero-academia'%}" class="image-container">
+          <img src="{% static 'main/img/my_hero_academia.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Моя геройская академия</div>
+        </a>
+        <a href="{%url 'anime-detail' slug='ataka-titanov'%}" class="image-container">
+          <img src="{% static 'main/img/attack_on_titan.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Атака титанов</div>
+        </a>
+        <a href="{%url 'anime-detail' slug='neobyatnyj-okean' %}" class="image-container">
+          <img src="{% static 'main/img/ocean.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Необъятный океан</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="{% static 'main/img/kimetsu.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Клинок, рассекающий демонов</div>
+        </a>
+        <a href="#" class="image-container">
+          <img src="{% static 'main/img/one-punch-man.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Ванпанчмен</div>
+        </a>
+        <a href="{%url 'anime-detail' slug='violetta-evergarden'%}" class="image-container">
+          <img src="{% static 'main/img/violett.jpg' %}" alt="" class="image-item">
+          <div class="caption-overlay">Виолетта Эвергарден</div>
+        </a>
+
+  </div>
+
+
+
+{% block script %}
+    <script src="{% static 'main/js/main.js' %}"></script>
+{% endblock %}
+     {% endblock %}
+
+

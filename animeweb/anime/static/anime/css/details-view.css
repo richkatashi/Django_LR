@@ -1,0 +1,135 @@
+@import url("main/css/base.css");
+
+
+{%block detail-view%}
+
+.container-wrapper
+{
+    background:white;
+}
+
+.container-wrapper,
+.container-wrapper.dark
+{
+    display:grid;
+    grid-column-gap: 30px;
+    grid-template-columns: 215px auto;
+}
+
+.container-wrapper.dark
+{
+    background-color:rgb(21,31,46);
+}
+
+.cover img
+{
+    background-color: rgba(212,230,245,.5);
+    border-radius: 2px;
+    box-shadow: 0 0 29px rgba(49,54,68,.25);
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+#content
+{
+    padding-top: 25px;
+    width:100%;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h1
+{
+    font-size: 1.9rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+
+.description
+{
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 900px;
+    padding: 15px 0;
+    transition: .2s;
+}
+
+
+.information
+{
+    background:white;
+}
+
+
+.information,
+.information.dark{
+    word-wrap:break-word;
+    width: 13.5em;
+    margin-top:30px;
+    padding: 20px;
+}
+
+.information.dark
+{
+    background-color:rgb(21,31,46);;
+}
+
+.information span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    margin-top:5px;
+}
+
+iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.info
+{
+    margin-top:-5px;
+}
+
+.video-show {
+  background-color: #23252b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.video-show:hover {
+  background-color: #bcbedc;
+  box-shadow: 0 0 15px #ffffff;
+  transform: scale(1.0);
+}
+
+
+#video-container {
+  margin-top: 2vh;
+  position:absolute;
+}
+
+.videos button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+{%endblock%}
