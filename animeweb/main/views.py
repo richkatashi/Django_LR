@@ -1,5 +1,11 @@
 from django.shortcuts import render
 import requests
+from django.shortcuts import redirect
+
+
+def redirect_to_main(request):
+    return redirect('main')
+
 
 def catalog(request):
     return render(request, 'main/catalog.html')
