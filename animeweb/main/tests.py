@@ -4,5 +4,5 @@ from django.test import TestCase
 
 class TestMain(TestCase):
     def test_index(self):  # Проверка доступности главной страницы
-        response = self.client.get('/main/')
-        self.assertEqual(response.status_code, 200)
+        response = self.client.get('/main')
+        self.assertEqual(response.status_code, 200) # Должно выдать ОК, дает сравнение кода статусов
