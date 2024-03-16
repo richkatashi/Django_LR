@@ -6,7 +6,7 @@ from .views import AnimeDetailView, catalog
 class AnimeModelTestCase(TestCase):
     def test_anime_model_str_method(self): # Проверка метода __str__ на корректное возвращение строкового объекта
         anime = Anime.objects.create(title='Атака Титанов', anime_status='Вышел', type='TV', year=2022, anime_genres='Action', anime_studios='MAPPA', directors='Hayao Miyazaki', episodes_total=2, translations='Subtitles', description='Test anime description', poster_url='http://example.com', slug='test-anime')
-        self.assertEqual(str(anime), 'Атака Титанов')
+        self.assertEqual(str(anime), 'Test')
 
 class AnimeViewTestCase(TestCase):
     def test_anime_detail_view(self): # Проверка на корректное отображение Аниме в AnimeDetailView
